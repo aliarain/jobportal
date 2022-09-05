@@ -44,8 +44,15 @@ INSTALLED_APPS = [
 
 
 
-    # * Custom Apps Installed
-    'django.contrib.gis'
+    # * Packages Installed
+    'django.contrib.gis',
+    'rest_framework',
+    'corsheaders',
+    'storages',
+    'django_filters',
+
+    # * Custom Apps 
+    jobs.apps.JobsConfig
 ]
 
 MIDDLEWARE = [
