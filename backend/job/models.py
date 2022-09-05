@@ -79,3 +79,12 @@ class Job(models.Model):
 
     def save(self, *args, **kwargs):
         g = geocoder.mapquest(self.address, key=os.eviron.get('GEOCODER_API'))
+        lng = g.lng
+        lat = g.lat
+
+        
+        self.point= Point(lng, lat)
+        super(Job, self).save(*args, **kwargs)
+
+
+
