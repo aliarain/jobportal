@@ -6,6 +6,9 @@ from datetime import *
 from django.contrib.auth.models import User
 
 
+import geocoder
+import os
+
 class JobType(models.TextChoices):
     Permanent = 'Permanent'
     Temporary = 'Temporary'
@@ -72,3 +75,7 @@ class Job(models.Model):
     lastDate = models.DateTimeField(default=return_date_time)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+    def save(self, *args, **kwargs):
+        g = geocoder.mapquest(self.address, key=os.eviron.get('GEOCODER_API'))
