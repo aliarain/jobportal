@@ -38,3 +38,18 @@ class Job(models.Model):
         choices=JobType.choices,
         default=JobType.Permanent
     )
+    education= models.CharField(
+        max_length=10,
+        choices=Education.choices,
+        default=Education.Bachelors
+    )
+    industry= models.CharField(
+        max_length=10,
+        choices=Industry.choices,
+        default=Industry.IT
+    )
+    experiance = models.CharField(
+        max_length=10,
+        choices=Experiance.choices,
+        default=Experiance.NO_EXPERIANCE
+    )
