@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MinValueValidators, MaxValueValidators
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.gis.db import models as gismodels
 from django.contrib.gis.geos import PointField
 from datetime import *
@@ -82,7 +82,7 @@ class Job(models.Model):
         lng = g.lng
         lat = g.lat
 
-        
+
         self.point= Point(lng, lat)
         super(Job, self).save(*args, **kwargs)
 

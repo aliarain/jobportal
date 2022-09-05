@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dotenv
-
+from job import models, admin
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,9 +27,9 @@ dotenv.read_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://localhost/', '127.0.0.1']
 
 
 # Application definition
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django_filters',
 
     # * Custom Apps 
-    jobs.apps.JobsConfig
+    job.apps.JobsConfig
 ]
 
 MIDDLEWARE = [
