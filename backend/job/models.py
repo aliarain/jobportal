@@ -1,6 +1,31 @@
 from django.db import models
 
 
+class JobType(models.TextChoices):
+    Permanent = 'Permanent'
+    Temporary = 'Temporary'
+    Intership = 'Intership'
+
+
+class Education(models.TextChoices):
+    Bachelors = 'Bachelors'
+    Masters = 'Masters'
+    PhD = 'PhD'
+
+
+class Industry(models.TextChoices):
+    Busniess = 'Busniess'
+    Banking = 'Banking'
+    Education = 'Education/Training'
+    Telecommunication = 'Telecommunication'
+    IT = 'Information Technology'
+
+
+class Experiance(models.TextChoices):
+    NO_EXPERIANCE='No Experiance'
+    ONE_YEAR='1 Year'
+    TWO_YEAR= '2 Years'
+    THREE_YEAR_PLUS=' 3 Years and above'
 
 
 class Job(models.Model):
